@@ -8,7 +8,7 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
     ports:
-      - 80:80 # 80(로컬):80(컨테이너) # localhost:80 컨테이너의 80
+      - "80:80" # 80(로컬):80(컨테이너) # localhost:80 컨테이너의 80
 
   docker-demo1:
     image: upi907/demodeploy # dockerdemo라는 이미지를 사용하고 해당 이미지를 컨테이너로 만들어주는
