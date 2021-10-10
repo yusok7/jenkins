@@ -10,4 +10,9 @@ public class Controller {
     public String test() {
         return "hiss";
     }
+
+    @GetMapping("/test2")
+    public String test2() {
+        return "hiss2";
+    }
 }
