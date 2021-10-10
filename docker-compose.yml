@@ -12,7 +12,6 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
       - "80:80" # 80(aws):80(컨테이너) # localhost:80 컨테이너의 80
     depends_on:
       - docker-demo1
-      - docker-demo2
 
   docker-demo1:
     image: foodeats # dockerdemo라는 이미지를 사용하고 해당 이미지를 컨테이너로 만들어주는
