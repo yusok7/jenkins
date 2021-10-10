@@ -14,8 +14,7 @@ pipeline {
         stage('Init') {
             steps {
                 echo 'clear'
-//                 sh 'docker stop $(docker ps -aq)'
-//                 sh 'docker rm $(docker ps -aq)'
+//                 sh 'docker rm -f server1'
 //                 sh 'docker rmi $(docker images -q)'
                 deleteDir()
             }
@@ -46,5 +45,15 @@ pipeline {
                 sh "docker-compose up --build -d"
             }
         }
+
+        stage('deploy2') {
+             steps {
+                sh 'docker rm -f server2'
+                sh "cd compose"
+                sh "docker-compose up --build -d"
+             }
+        }
+
+
     }
 }
