@@ -1,0 +1,12 @@
+version: "3" # 파일 규격 버전
+
+services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
+
+  docker-demo2:
+    image: foodeats # dockerdemo라는 이미지를 사용하고 해당 이미지를 컨테이너로 만들어주는
+    # dockerdemo
+    # docker-demo2 해당 컨테이너의 8080 포트가 열려있고
+    container_name:
+      server2
+    ports:
+      - "8081:8080" #localhost:8081
