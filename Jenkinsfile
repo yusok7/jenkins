@@ -14,8 +14,7 @@ pipeline {
         stage('Init') {
             steps {
                 echo 'clear'
-//                 sh 'docker rm -f server1'
-//                 sh 'docker rmi $(docker images -q)'
+                // sh 'docker rm -f server1'
                 deleteDir()
             }
         }
@@ -48,12 +47,18 @@ pipeline {
 
         stage('deploy2') {
              steps {
-                sh 'docker rm -f server2'
-                sh "cd compose"
-                sh "docker-compose up --build -d"
+                // sh 'docker rm -f spring-boot-ci-cd_docker-demo2_1'
+                sh "pwd"
+                sh "ls -al"
+                dir ('./compose') {
+                    sh "pwd"
+                    sh "ls -al"
+                    // sh 'docker rm -f server2'
+                    sh "docker-compose up --build -d"
+                }
+                echo 'dir close'
+                sh "pwd"
              }
         }
-
-
     }
 }
